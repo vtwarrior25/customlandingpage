@@ -3,95 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <style>
-        /* Google font */
-        @import url('https://fonts.googleapis.com/css?family=Orbitron');
-        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-
-        body {
-            background-image:url(somedopemountains.png);
-            background-size:cover;
-            background-repeat: no-repeat;
-        }
-
-        #flexcontainer{
-            display:flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            width:100%;
-        }
-
-        #clock {
-            font-family: 'Orbitron', sans-serif;
-            color: #66ff99;
-            background-image:linear-gradient(#705780, #453E6D);
-            border: 2px #453E6D solid ;
-            font-size: 80px;
-            text-align: center;
-            padding: 40px;
-            display:block;
-            float:left;
-            margin-left:4%;
-            margin-top:1%;
-            width:580px;
-        }
-
-        #weather-img{
-            display:block;
-            float: right; 
-            scale:100%;
-            margin-right:4%;
-            margin-top:1%
-            /*grid-area:1/3/2/4;*/
-        }
-
-        #linkssection{
-            float:none;
-            display:block;
-        }
-
-        .linkstitle{
-            font-size:30px;
-            text-decoration: underline;
-            text-emphasis:bold;
-            padding:0px;
-            text-align:center;
-            background-image:linear-gradient(#443D6C);
-        }
-
-        .linkscol{
-            padding:10px;
-            margin:20px;
-            border:2px #453E6D solid;
-            float:left;
-            font-size:25px;
-            color:white;
-            text-decoration: none;
-            font-family: 'Source Code Pro', monospace;
-        }
-
-        .linkslist{
-            padding:10px;
-        }
-
-        .linkitem{
-            
-        }
-        
-        .spacer{
-            padding:10px;
-        }
-
-        .linkscol a{
-            text-decoration: none;
-            color:white;
-        }
-
-        .linkscol a:hover{
-            text-decoration: underline;
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="purplemountains.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
@@ -118,19 +30,12 @@
         </script>
     </div>
 
-
     <div id="wttrsection">
-        <a href="https://wttr.in/05767" target="_blank">
+        <a href="https://wttr.in/05767" target="_blank" id="weatherimgarea">
             <img id="weather-img" class="img-fluid rounded" src="https://wttr.in/05767_1pQu_transparency=255_background=443D6C_lang=en.png" alt="Current weather in Rochester">
         </a>
     </div>
 
-    
-    <script>
-        $(document).ready(function(){
-             $("wttrsection").load("https://wttr.in/05767?2")
-        })
-    </script>
     <div id="flexcontainer">
         <div id="linkssection">    
             <div id="linkscol1" class="linkscol">
@@ -153,7 +58,8 @@
                     <div class="spacer"></div>
                     <a class="linkitem" id="bookofsecretknowledge" href="https://github.com/trimstray/the-book-of-secret-knowledge">SecretKnowledge</a>
                     <div class="spacer"></div>
-                    <a class="linkitem" id="" href=""></a>
+                    <a class="linkitem" id="vimbinds" href="https://vim.rtorr.com/">VimCheatSheet</a>
+                    <div class="spacer"></div>
                 </div>   
             </div>
 
@@ -178,6 +84,19 @@
                     <div class="spacer"></div>
                     <a class="linkitem" id="" href=""></a>
                 </div>   
+            </div>
+
+            <div id="linkscol5" class="linkscol">
+                <span class="linkstitle">Other Things</span>
+                <div class="linkslist">
+                    <a class="linkitem" id="" href=""></a>
+                    <div class="spacer"></div>
+                    <a class="linkitem" id="" href=""></a>
+                    <div class="spacer"></div>
+                    <a class="linkitem" id="" href=""></a>
+                    <div class="spacer"></div>
+                </div>
+
             </div>
 
             <div id="linkscol5" class="linkscol">

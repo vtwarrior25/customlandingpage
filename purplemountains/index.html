@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <style>
+        /* Google font */
+        @import url('https://fonts.googleapis.com/css?family=Orbitron');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+        body {
+            background-image:url(somedopemountains.png);
+            background-size:cover;
+            background-repeat: no-repeat;
+        }
+
+        #clock {
+            font-family: 'Orbitron', sans-serif;
+            color: #66ff99;
+            background-image:linear-gradient(#705780, #453E6D);
+            border: 2px #453E6D solid ;
+            font-size: 70px;
+            text-align: center;
+            padding: 40px;
+            display:block;
+            float:left;
+            margin-left:7%;
+            margin-top:1%
+        }
+
+        #weather-img{
+            display:block;
+            float: right; 
+            scale:100%;
+            /*grid-area:1/3/2/4;*/
+        }
+
+        #linkssection{
+            float:none;
+            display:block;
+        }
+
+        .linkstitle{
+            font-size:35px;
+            text-decoration: underline;
+            text-emphasis:bold;
+            padding:0px;
+            text-align:center;
+            background-image:linear-gradient(#443D6C);
+        }
+
+        .linkscol{
+            padding:10px;
+            margin:20px;
+            border:2px #453E6D solid;
+            float:left;
+            font-size:30px;
+            color:white;
+            text-decoration: none;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        .linkslist{
+            padding:10px;
+        }
+
+        .linkitem{
+        }
+        
+        .spacer{
+            padding:10px;
+        }
+
+        .linkscol a{
+            text-decoration: none;
+            color:white;
+        }
+
+        .linkscol a:hover{
+            text-decoration: underline;
+        }
+
+        #linkscol1{
+            /*grid-row: 2/3;
+            grid-column: 1/2;*/
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div id="gridcontainer">
+    <div id="clock" class="griditem">
+        <script>
+            function currentTime() {
+                let date = new Date(); 
+                let hh = date.getHours();
+                let mm = date.getMinutes();
+                let ss = date.getSeconds();
+                let session = "AM";
+        
+                hh = (hh < 10) ? "0" + hh : hh;
+                mm = (mm < 10) ? "0" + mm : mm;
+                ss = (ss < 10) ? "0" + ss : ss;
+                    
+                let time = hh + ":" + mm + ":" + ss + " " + session;
+        
+                document.getElementById("clock").innerText = time; 
+                let t = setTimeout(function(){ currentTime() }, 1000);
+            }
+            currentTime();
+        </script>
+    </div>
+
+
+    <div id="wttrsection">
+        <img id="weather-img" class="img-fluid rounded" src="https://wttr.in/05767_2pQu_transparency=255_background=443D6C_lang=en.png" alt="Current weather in Rochester">
+    </div>
+
+    
+    <script>
+        $(document).ready(function(){
+             $("wttrsection").load("https://wttr.in/05767?2")
+        })
+    </script>
+
+    <div id="linkssection">    
+        <div id="linkscol1" class="linkscol">
+            <span class="linkstitle">School</span>
+            <div class="linkslist">
+                <a class="linkitem" id="schoolemail" href="https://outlook.office365.com/mail/inbox">School Email</a>
+                <div class="spacer"></div>
+                <a class="linkitem" id="canvas" href="https://vsc.instructure.com/" target="_blank">Canvas</a>
+                <div class="spacer"></div>
+                <a class="linkitem" id="vtcportal" href="https://portal.vsc.edu/vtchome/Pages/default.aspx/">VTC Portal</a>
+                <div class="spacer"></div>
+                <a class="linkitem" id="tutorrequest" href="https://vsc.instructure.com/courses/21715/modules/items/1252425">Tutor Request</a>
+            </div>  
+        </div>
+        <div id="linkscol2" class="linkscol">
+            <span class="linkstitle">Coding</span>
+            <div class="linkslist">
+                <a class="linkitem" id="w3" href="w3schools.com">W3 Schools</a>
+                <div class="spacer"></div>
+                <a class="linkitem" id="mygithubrepos" href="https://github.com/vtwarrior25?tab=repositories">My GitHub Repos</a>
+                <div class="spacer"></div>
+                <a class="linkitem" id="" href=""></a>
+
+            </div>
+            
+        </div>
+        <div id="linkscol3" class="linkscol">
+            <span class="linkstitle">CS:GO</span>
+            <div class="linkslist"></div>
+            
+        </div>
+        <div id="linkscol4" class="linkscol">
+            <span class="linkstitle"></span>
+            <div class="linkslist"></div>
+            
+        </div>
+    </div>
+<!--
+<div class="spacer"></div>
+                <a class="linkitem" id="" href=""></a>
+-->
+
+</div>
+</body>
+
+</html>

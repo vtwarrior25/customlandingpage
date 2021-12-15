@@ -3,122 +3,163 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="purplemountains.css"/>
+    <link rel="stylesheet" type="text/css" href="blackbackground.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 <body>
-    <div id="clock" class="griditem">
-        <script>
-            function currentTime() {
-                let date = new Date(); 
-                let hh = date.getHours();
-                let mm = date.getMinutes();
-                let ss = date.getSeconds();
-                let session = "AM";
+    <main>
+        <div id="clock" class="griditem">
+            <script>
+                function currentTime() {
+                    let date = new Date(); 
+                    let hh = date.getHours();
+                    let mm = date.getMinutes();
+                    let ss = date.getSeconds();
+                    let session = "AM";
+            
+                    hh = (hh < 10) ? "0" + hh : hh;
+                    mm = (mm < 10) ? "0" + mm : mm;
+                    ss = (ss < 10) ? "0" + ss : ss;
+                        
+                    let time = hh + ":" + mm + ":" + ss + " " + session;
+            
+                    document.getElementById("clock").innerText = time; 
+                    let t = setTimeout(function(){ currentTime() }, 1000);
+                }
+                currentTime();
+            </script>
+        </div>
+
         
-                hh = (hh < 10) ? "0" + hh : hh;
-                mm = (mm < 10) ? "0" + mm : mm;
-                ss = (ss < 10) ? "0" + ss : ss;
-                    
-                let time = hh + ":" + mm + ":" + ss + " " + session;
+        <div id="wttrsection">
+            <a href="https://wttr.in/05767" target="_blank" id="weatherimgarea">
+                <img id="weather-img" class="img-fluid rounded" src="https://wttr.in/05767_1pQu_transparency=255_background=443D6C_lang=en.png" alt="Current weather in Rochester">
+            </a>
+        </div>
         
-                document.getElementById("clock").innerText = time; 
-                let t = setTimeout(function(){ currentTime() }, 1000);
-            }
-            currentTime();
-        </script>
-    </div>
-
-    
-    <div id="wttrsection">
-        <a href="https://wttr.in/05767" target="_blank" id="weatherimgarea">
-            <img id="weather-img" class="img-fluid rounded" src="https://wttr.in/05767_1pQu_transparency=255_background=443D6C_lang=en.png" alt="Current weather in Rochester">
-        </a>
-    </div>
-    
-    <script src="blackbackground.js"></script>
-    <div id="flexcontainer">
-        <div id="linkssection">    
-            <div id="linkscol1" class="linkscol">
-                <span class="linkstitle">School</span>
-                <div class="linkslist">
-                    <a class="linkitem" id="schoolemail" href="https://outlook.office365.com/mail/inbox">School Email</a>
-                    <div class="spacer"></div>
-                    <a class="linkitem" id="canvas" href="https://vsc.instructure.com/" target="_blank">Canvas</a>
-                    <div class="spacer"></div>
-                    <a class="linkitem" id="vtcportal" href="https://portal.vsc.edu/vtchome/Pages/default.aspx/">VTC Portal</a>
-                    <div class="spacer"></div>
-                    <a class="linkitem" id="tutorrequest" href="https://vsc.instructure.com/courses/21715/modules/items/1252425">Tutor Request</a>
-                </div>  
-            </div>
-
-            <div id="linkscol2" class="linkscol">
-                <span class="linkstitle">Nerd Stuff</span>
-                <div class="linkslist">
-                    <a class="linkitem" id="privacytools" href="https://www.privacytools.io/">PrivacyTools</a>
-                    <div class="spacer"></div>
-                    <a class="linkitem" id="bookofsecretknowledge" href="https://github.com/trimstray/the-book-of-secret-knowledge">SecretKnowledge</a>
-                    <div class="spacer"></div>
-                    <a class="linkitem" id="vimbinds" href="https://vim.rtorr.com/">VimCheatSheet</a>
-                    <div class="spacer"></div>
-                </div>   
-            </div>
-
-            <div id="linkscol3" class="linkscol">
-                <span class="linkstitle">CS:GO</span>
-                <div class="linkslist">
-                    <a class="linkitem" id="liquidpedia" href="https://liquipedia.net/counterstrike/Main_Page">Liquidpedia</a>
-                    <div class="spacer"></div>
-                    <a class="linkitem" id="csgostash" href="https://csgostash.com/">CS:GO Stash</a>
-                    <div class="spacer"></div>
-                    <a class="linkitem" id="" href=""></a>
-                    <div class="spacer"></div>
-                </div>   
-            </div>
-
-            <div id="linkscol4" class="linkscol">
-                <span class="linkstitle">Coding</span>
-                <div class="linkslist">
-                    <a class="linkitem" id="w3" href="w3schools.com">W3 Schools</a>
-                    <div class="spacer"></div>
-                    <a class="linkitem" id="mygithubrepos" href="https://github.com/vtwarrior25?tab=repositories">MyGitHuRepos</a>
-                    <div class="spacer"></div>
-                    <a class="linkitem" id="" href=""></a>
-                </div>   
-            </div>
-
-            <div id="linkscol5" class="linkscol">
-                <span class="linkstitle">Other Things</span>
-                <div class="linkslist">
-                    <a class="linkitem" id="" href=""></a>
-                    <div class="spacer"></div>
-                    <a class="linkitem" id="" href=""></a>
-                    <div class="spacer"></div>
-                    <a class="linkitem" id="" href=""></a>
-                    <div class="spacer"></div>
+        <script src="blackbackground.js"></script>
+        <div id="flexcontainer">
+            <div id="linkssection">    
+                <div id="linkscol1" class="linkscol">
+                    <span class="linkstitle">School</span>
+                    <div class="linkslist">
+                        <a class="linkitem" id="schoolemail" href="https://outlook.office365.com/mail/inbox">School Email</a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="canvas" href="https://vsc.instructure.com/" target="_blank">Canvas</a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="vtcportal" href="https://portal.vsc.edu/vtchome/Pages/default.aspx/">VTC Portal</a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="tutorrequest" href="https://vsc.instructure.com/courses/21715/modules/items/1252425">Tutor Request</a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                    </div>  
                 </div>
 
-            </div>
-
-            <div id="linkscol5" class="linkscol">
-                <span class="linkstitle">Other Things</span>
-                <div class="linkslist">
-                    <a class="linkitem" id="" href=""></a>
-                    <div class="spacer"></div>
-                    <a class="linkitem" id="" href=""></a>
-                    <div class="spacer"></div>
-                    <a class="linkitem" id="" href=""></a>
-                    <div class="spacer"></div>
+                <div id="linkscol2" class="linkscol">
+                    <span class="linkstitle">Nerd Stuff</span>
+                    <div class="linkslist">
+                        <a class="linkitem" id="privacytools" href="https://www.privacytools.io/">PrivacyTools</a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="bookofsecretknowledge" href="https://github.com/trimstray/the-book-of-secret-knowledge">SecretKnowledge</a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="vimbinds" href="https://vim.rtorr.com/">VimCheatSheet</a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                    </div>   
                 </div>
 
+                <div id="linkscol3" class="linkscol">
+                    <span class="linkstitle">CS:GO</span>
+                    <div class="linkslist">
+                        <a class="linkitem" id="liquidpedia" href="https://liquipedia.net/counterstrike/Main_Page">Liquidpedia</a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="csgostash" href="https://csgostash.com/">CS:GO Stash</a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="hltv" href="https://www.hltv.org/">HLTV</a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                    </div>   
+                </div>
+
+                <div id="linkscol4" class="linkscol">
+                    <span class="linkstitle">Coding</span>
+                    <div class="linkslist">
+                        <a class="linkitem" id="w3" href="w3schools.com">W3 Schools</a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="mygithubrepos" href="https://github.com/vtwarrior25?tab=repositories">MyGitHubRepos</a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="githubgist" href="https://gist.github.com/">GithubGists</a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                    </div>   
+                </div>
+
+                <div id="linkscol5" class="linkscol">
+                    <span class="linkstitle">Other Things</span>
+                    <div class="linkslist">
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                    </div>
+
+                </div>
+
+                <div id="linkscol5" class="linkscol">
+                    <span class="linkstitle">Other Things</span>
+                    <div class="linkslist">
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                        <a class="linkitem" id="" href=""></a>
+                        <div class="spacer"></div>
+                    </div>
+                    <!--
+                    <a class="linkitem" id="" href=""></a>
+                    <div class="spacer"></div>
+                    -->
+                </div>
             </div>
         </div>
-    </div>
-<!--
-<a class="linkitem" id="" href=""></a>
-<div class="spacer"></div>
--->
+    </main>
+
+    <footer>
+        &copy;Nick Steventon 2021. This page is licensed under the MIT license.
+    </footer>
 </body>
 
 </html>

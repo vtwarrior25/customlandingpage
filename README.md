@@ -7,7 +7,7 @@
 ## How to Adapt For Your Use Case:
 Clone this repository, or at least download [index.html](index.html) and [blackbackground.css](blackbackground.css).
 Next, open index.html with a text editor, and navigate to the div with an id of *linkssection*.
-Each *a* tag will contain an *href* field, where you put the URL you want to link to. Between the *>* and the *<* on that line is where you would add the text that would appear for the link, like how this link says "Google": [Google](https://google.com).
+Each *\<a\>* tag will contain an *href* field, where you put the URL you want to link to. Between the *>* and the *<* on that line is where you would add the text that would appear for the link, like how this link says "Google": [Google](https://google.com).
 
 
 ## Future Improvements:
